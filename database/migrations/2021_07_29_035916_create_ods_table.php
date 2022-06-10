@@ -23,7 +23,7 @@ class CreateOdsTable extends Migration
             $table->integer('id_pp',)->nullable();
             $table->string('desc_pp')->nullable();
             $table->integer('id_ods',)->nullable();
-            $table->tinyText('desc_ods')->nullable();
+            $table->text('desc_ods')->nullable();
             $table->integer('id_metaods',)->nullable();
             $table->text('desc_metaods')->nullable();
             $table->integer('id_sm1',)->nullable();
