@@ -22,7 +22,7 @@ class CreateObjetivoProgramasTable extends Migration
             $table->string('descripcion_modalidad')->nullable();
             $table->integer('progr_pres',)->nullable();
             $table->string('nombre_progr_pres')->nullable();
-            $table->string('objetivo_progr_pres')->nullable();
+            $table->tinyText('objetivo_progr_pres')->nullable();
             $table->string('inicio_operaciones')->nullable();
             $table->integer('poblacion_objetivo',)->nullable();
             $table->integer('unidad_medida',)->nullable();
