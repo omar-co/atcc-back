@@ -18,7 +18,7 @@ class CreateMetaOdsTable extends Migration
             $table->id();
             $table->foreignId('eje_ndc_id')->nullable()->constrained();
             $table->string('clave');
-            $table->string('nombre');
+            $table->text('nombre');
             $table->string('componenete');
             $table->timestamps();
         });
@@ -73,7 +73,7 @@ values  (1, 1, 'A1.', 'Implementar acciones en 50% de los municipios identificad
         (33, null, '6', 'Agricultura y ganadería', 'adaptacion', null, null),
         (34, null, '7', 'Residuos', 'adaptacion', null, null),
         (35, null, '8', 'Uso de suelo, cambio de uso de suelo y  silvicultura', 'adaptacion', null, null)
-        
+
         ;";
     }
 }
