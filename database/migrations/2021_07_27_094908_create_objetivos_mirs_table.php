@@ -39,8 +39,8 @@ class CreateObjetivosMirsTable extends Migration
             $table->string('desc_pp')->nullable();
             $table->string('modalidad_pp')->nullable();
             $table->integer('id_pnd',)->nullable();
-            $table->string('desc_pnd')->nullable();
-            $table->string('objetivo_pnd')->nullable();
+            $table->tinyText('desc_pnd')->nullable();
+            $table->tinyText('objetivo_pnd')->nullable();
             $table->string('programa_pnd')->nullable();
             $table->string('desc_programa_pnd')->nullable();
             $table->string('objetivo_programa_pnd')->nullable();
@@ -53,7 +53,7 @@ class CreateObjetivosMirsTable extends Migration
             $table->tinyText('desc_objetivo')->nullable();
             $table->string('supuestos')->nullable();
             $table->integer('id_nivel',)->nullable();
-            $table->string('desc_nivel')->nullable();
+            $table->tinyText('desc_nivel')->nullable();
             $table->string('liga')->nullable();
             $table->timestamps();
         });
