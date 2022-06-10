@@ -21,15 +21,15 @@ class CreateObjetivoProgramasTable extends Migration
             $table->string('modalidad')->nullable();
             $table->string('descripcion_modalidad')->nullable();
             $table->integer('progr_pres',)->nullable();
-            $table->string('nombre_progr_pres')->nullable();
+            $table->text('nombre_progr_pres')->nullable();
             $table->text('objetivo_progr_pres')->nullable();
             $table->string('inicio_operaciones')->nullable();
             $table->integer('poblacion_objetivo',)->nullable();
             $table->integer('unidad_medida',)->nullable();
-            $table->string('descripcion_unimed')->nullable();
+            $table->text('descripcion_unimed')->nullable();
             $table->integer('unidad_med_esp',)->nullable();
-            $table->string('descripcion_unimed_esp')->nullable();
-            $table->string('concurrencia_de_recursos')->nullable();
+            $table->text('descripcion_unimed_esp')->nullable();
+            $table->text('concurrencia_de_recursos')->nullable();
             $table->timestamps();
         });
 
