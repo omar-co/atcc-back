@@ -35,7 +35,7 @@ class CreateTipoGastosTable extends Migration
     }
 
     private function import() {
-        return "insert into hacienda.tipo_gastos (id, valor, nombre, created_at, updated_at)
+        return "insert into tipo_gastos (id, valor, nombre, created_at, updated_at)
 values  (1, 0, 'Gasto corriente por concepto de recursos otorgados a fideicomisos públicos no considerados entidad paraestatal cuyo propósito financiero se limite a la administración y pago', null, null),
         (2, 1, 'Gasto corriente', null, null),
         (3, 2, 'Gasto de capital diferente de obra pública', null, null),

@@ -37,7 +37,7 @@ class CreateRelacionEconomicasTable extends Migration
     }
 
     private function import() {
-        return "insert into hacienda.relacion_economicas (id, ramo, partida_especifica, fuente, tipo_gasto, created_at, updated_at)
+        return "insert into relacion_economicas (id, ramo, partida_especifica, fuente, tipo_gasto, created_at, updated_at)
 values  (1, 8, 11301, 1, 1, null, null),
         (2, 8, 11301, 4, 1, null, null),
         (3, 8, 11401, 1, 1, null, null),

@@ -36,7 +36,7 @@ class CreateActividadsTable extends Migration
     }
 
     private function import() {
-        return "insert into hacienda.actividads (id, ramo_id, clave, name, created_at, updated_at)
+        return "insert into actividads (id, ramo_id, clave, name, created_at, updated_at)
 values  (1, 8, 1, 'Función pública y buen gobierno', null, null),
         (2, 8, 2, 'Servicios de apoyo administrativo', null, null),
         (3, 8, 3, 'Formación recursos humanos para el sector (educación media superior)', null, null),

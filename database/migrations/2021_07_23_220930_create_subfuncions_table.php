@@ -36,7 +36,7 @@ class CreateSubfuncionsTable extends Migration
     }
 
     private function import() {
-        return "insert into hacienda.subfuncions (id, funcion_id, clave, nombre, created_at, updated_at)
+        return "insert into subfuncions (id, funcion_id, clave, nombre, created_at, updated_at)
 values  (1, 1, 1, 'Legislación', null, null),
         (2, 1, 2, 'Fiscalización', null, null),
         (3, 2, 1, 'Impartición de Justicia', null, null),

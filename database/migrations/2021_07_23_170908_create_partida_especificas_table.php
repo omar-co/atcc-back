@@ -38,7 +38,7 @@ class CreatePartidaEspecificasTable extends Migration
     }
 
     private function import() {
-        return "insert into hacienda.partida_especificas (id, capitulo, concepto, partida_generica, partida_especifca, nombre, created_at, updated_at)
+        return "insert into partida_especificas (id, capitulo, concepto, partida_generica, partida_especifca, nombre, created_at, updated_at)
 values  (1, 1000, 1100, 111, 11101, 'Dietas (Ramos Autónomos)', null, null),
         (2, 1000, 1100, 112, 11201, 'Haberes', null, null),
         (3, 1000, 1100, 113, 11301, 'Sueldos base', null, null),

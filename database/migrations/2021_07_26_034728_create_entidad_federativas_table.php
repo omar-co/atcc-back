@@ -35,7 +35,7 @@ class CreateEntidadFederativasTable extends Migration
     }
 
     private function import() {
-        return "insert into hacienda.entidad_federativas (id, clave, nombre, created_at, updated_at)
+        return "insert into entidad_federativas (id, clave, nombre, created_at, updated_at)
 values  (1, 1, 'Aguascalientes', null, null),
         (2, 2, 'Baja California', null, null),
         (3, 3, 'Baja California Sur', null, null),

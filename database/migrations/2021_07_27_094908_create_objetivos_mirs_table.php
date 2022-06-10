@@ -72,7 +72,7 @@ class CreateObjetivosMirsTable extends Migration
     }
 
     private function import() {
-        return "insert into hacienda.objetivos_mirs (ciclo, id_ramo, id_objetivo, desc_objetivo, id_nivel)
+        return "insert into objetivos_mirs (ciclo, id_ramo, id_objetivo, desc_objetivo, id_nivel)
 values  (2022, 25, 69403, 'Contribuir a lograr una educación equitativa, inclusiva, intercultural e integral en la población de la Ciudad de México.', 1),
         (2022, 48, 69436, 'Contribuir a fortalecer la creación artística y desarrollar las industrias creativas', 1),
         (2022, 11, 69396, 'Contribuir a garantizar el derecho a la cultura física y a la práctica del deporte.', 4),

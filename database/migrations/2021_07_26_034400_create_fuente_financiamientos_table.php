@@ -32,7 +32,7 @@ class CreateFuenteFinanciamientosTable extends Migration {
     }
 
     private function import() {
-        return "insert into hacienda.fuente_financiamientos (id, clave, nombre, created_at, updated_at)
+        return "insert into fuente_financiamientos (id, clave, nombre, created_at, updated_at)
 values  (1, 1, 'Recursos fiscales', null, null),
         (2, 2, 'Gasto financiado con recursos del BID-BIRF, así como otros financiamientos externos', null, null),
         (3, 3, 'Contraparte nacional', null, null),

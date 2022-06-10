@@ -37,7 +37,7 @@ class CreateProgramaPresupuestalsTable extends Migration
     }
 
     private function import() {
-        return "insert into hacienda.programa_presupuestals (id, ramo_id, modalidad_id, clave, name, created_at, updated_at)
+        return "insert into programa_presupuestals (id, ramo_id, modalidad_id, clave, name, created_at, updated_at)
 values  (1, 8, 2, 1, 'Producción y comercialización de Biológicos Veterinarios', null, null),
         (2, 8, 2, 4, 'Adquisición de leche nacional', null, null),
         (3, 8, 2, 5, 'Comercialización de productos lácteos', null, null),
