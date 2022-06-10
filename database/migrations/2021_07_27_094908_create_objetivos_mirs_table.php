@@ -50,7 +50,7 @@ class CreateObjetivosMirsTable extends Migration
             $table->string('desc_matriz')->nullable();
             $table->integer('id_objetivo',)->nullable();
             $table->integer('id_objetivo_padre',)->nullable();
-            $table->tinyText('desc_objetivo')->nullable();
+            $table->text('desc_objetivo')->nullable();
             $table->string('supuestos')->nullable();
             $table->integer('id_nivel',)->nullable();
             $table->tinyText('desc_nivel')->nullable();
