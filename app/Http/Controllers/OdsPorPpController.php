@@ -19,7 +19,7 @@ class OdsPorPpController extends Controller
               ->where('id_ramo', $ramo)
               ->where('id_modalidad', $modalidad)
               ->where('id_pp', $pp)
-              ->groupBy('id_ods')
+              ->groupBy('id_ods', 'desc_ods')
               ->get()
         );
     }

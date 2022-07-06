@@ -39,7 +39,7 @@ class FinalidadController extends Controller {
                 ->where('id_ramo', $ramo)
                 ->where('id_modalidad', $modalidad)
                 ->where('id_pp', $pp)
-                ->groupBy('gpo_funcional')
+                ->groupBy('gpo_funcional', 'desc_gpo_funcional')
                 ->get()
         );
     }

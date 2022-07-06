@@ -41,7 +41,7 @@ class SubfuncionController extends Controller {
                 ->where('id_ramo', $ramo)
                 ->where('id_modalidad', $modalidad)
                 ->where('id_pp', $pp)
-                ->groupBy('id_subfuncion')
+                ->groupBy('id_subfuncion', 'desc_subfuncion')
                 ->get()
         );
     }

@@ -42,7 +42,7 @@ class ActividadController extends Controller
                     ->where('id_ramo', $ramo)
                     ->where('id_modalidad', $modalidad)
                     ->where('id_pp', $pp)
-                    ->groupBy('id_ai')
+                    ->groupBy('id_ai', 'desc_ai')
                     ->get()
         );
     }

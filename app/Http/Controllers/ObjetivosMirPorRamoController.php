@@ -22,7 +22,7 @@ class ObjetivosMirPorRamoController extends Controller {
             ObjetivosMir::select(['id_objetivo', 'desc_objetivo'])
                 ->where('id_ramo', $ramo)
                 ->whereIn('id_nivel', $request->niveles)
-                ->groupBy('id_nivel')
+                ->groupBy('id_nivel', 'desc_objetivo')
                 ->get()
         );
     }

@@ -40,7 +40,7 @@ class ModalidadController extends Controller
         return response(
           Catalogo::select(['id_modalidad', 'desc_modalidad'])
             ->where('id_ramo', $id)
-            ->groupBy('id_modalidad')
+            ->groupBy('id_modalidad', 'desc_modalidad')
             ->get()
         );
     }

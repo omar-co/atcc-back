@@ -41,7 +41,7 @@ class FuncionController extends Controller {
                 ->where('id_ramo', $ramo)
                 ->where('id_modalidad', $modalidad)
                 ->where('id_pp', $pp)
-                ->groupBy('id_funcion')
+                ->groupBy('id_funcion', 'desc_funcion')
                 ->get()
         );
     }
