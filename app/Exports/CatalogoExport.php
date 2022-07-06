@@ -3,13 +3,14 @@
 namespace App\Exports;
 
 use App\Models\Catalogo;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class CatalogoExport implements FromCollection, WithHeadings {
+class CatalogoExport implements FromCollection, WithHeadings, ShouldQueue {
     /**
      * @return Collection
      */
