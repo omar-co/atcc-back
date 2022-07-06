@@ -34,6 +34,6 @@ class ExportController extends Controller {
 
         $name = $type . '-' . now();
 
-        return Excel::download(new $class, "$name.csv", \Maatwebsite\Excel\Excel::CSV);
+        return Excel::download(new $class, "$name.xlsx", \Maatwebsite\Excel\Excel::XLSX);
     }
 }
