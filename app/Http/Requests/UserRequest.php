@@ -20,7 +20,6 @@ class UserRequest extends MainRequest
             'name' => 'required',
             'last_name' => 'required',
             'email' => 'required',
-            'active' => 'required|boolean',
             'role_id' => 'required|integer',
         ];
     }

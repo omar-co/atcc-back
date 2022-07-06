@@ -20,7 +20,7 @@ class UserService {
             ->setName($request->getName())
             ->setLastName($request->getLastName())
             ->setEmail($request->getEmail())
-            ->setActive($request->isActive())
+            ->setActive(true)
             ->setRoleId($request->getRoleId())
             ->setRamoId($request->getRamoId())
         ;
