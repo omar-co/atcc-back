@@ -5,9 +5,10 @@ namespace App\Exports;
 use App\Models\Ods;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithCustomCsvSettings;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class OdsExport implements FromCollection, WithHeadings {
+class OdsExport implements FromCollection, WithHeadings, withCustomCsvSettings {
 
     /**
      * @return Collection
@@ -42,6 +43,12 @@ class OdsExport implements FromCollection, WithHeadings {
             'submeta_6_de_la_meta_de_desarrollo_sostenibledescripcion',
             'tipo_de_contribucion',
             'tipo_de_contribuciondescripcion',
+        ];
+    }
+
+    public function getCsvSettings(): array {
+        return [
+            'output_encoding' => 'ISO-8859-1'
         ];
     }
 }
