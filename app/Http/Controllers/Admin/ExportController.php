@@ -34,6 +34,8 @@ class ExportController extends Controller {
 
         $name = $type . '-' . now();
 
-        return Excel::download(new $class, "$name.xlsx", \Maatwebsite\Excel\Excel::XLSX);
+        (new $class)->queue("$name.xlsx");
+
+        return back()->withSuccess('Exported');
     }
 }

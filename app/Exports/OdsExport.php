@@ -4,11 +4,14 @@ namespace App\Exports;
 
 use App\Models\Ods;
 use Illuminate\Support\Collection;
+use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithCustomCsvSettings;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
 class OdsExport implements FromCollection, WithHeadings, withCustomCsvSettings {
+
+    use Exportable;
 
     /**
      * @return Collection
