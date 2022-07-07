@@ -4,7 +4,6 @@ namespace App\Exports;
 
 use App\Models\ObjetivosMir;
 use App\Models\Ods;
-use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\FromCollection;
@@ -22,7 +21,7 @@ class MirExport implements FromQuery, WithHeadings {
         return ObjetivosMir::select(['ciclo', 'id_ramo', 'id_objetivo', 'desc_objetivo', 'id_nivel'])->get();
     }
 
-    public function query(): Builder {
+    public function query() {
         return ObjetivosMir::select(['ciclo', 'id_ramo', 'id_objetivo', 'desc_objetivo', 'id_nivel']);
     }
 

@@ -3,7 +3,7 @@
 namespace App\Exports;
 
 use App\Models\Ods;
-use Illuminate\Database\Query\Builder;
+
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\FromCollection;
@@ -22,7 +22,7 @@ class OdsExport implements FromQuery, WithHeadings, withCustomCsvSettings {
         return Ods::all();
     }
 
-    public function query(): Builder {
+    public function query() {
         return Ods::where('id', '>=', 1);
     }
 
