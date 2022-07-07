@@ -4,15 +4,13 @@ namespace App\Exports;
 
 use App\Models\Catalogo;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Collection;
-use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class CatalogoExport implements FromQuery, WithHeadings {
-
-    use Exportable;
+class CatalogoExport implements FromCollection, WithHeadings {
 
     /**
      * @return Collection
@@ -22,7 +20,7 @@ class CatalogoExport implements FromQuery, WithHeadings {
     }
 
     public function query() {
-        return Catalogo::select('*')->limit(5000);
+        return Catalogo::select('*')->limit(1);
     }
 
     public function headings(): array {
