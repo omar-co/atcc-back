@@ -3,13 +3,15 @@
 namespace App\Exports;
 
 use App\Models\Ods;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\WithCustomCsvSettings;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class OdsExport implements FromCollection, WithHeadings, withCustomCsvSettings {
+class OdsExport implements FromQuery, WithHeadings, withCustomCsvSettings {
 
     use Exportable;
 
@@ -18,6 +20,10 @@ class OdsExport implements FromCollection, WithHeadings, withCustomCsvSettings {
      */
     public function collection(): Collection {
         return Ods::all();
+    }
+
+    public function query(): Builder {
+        return Ods::where('id', '>=', 1);
     }
 
     public function headings(): array {

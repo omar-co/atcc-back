@@ -11,7 +11,7 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class CatalogoExport implements FromCollection, WithHeadings {
+class CatalogoExport implements FromQuery, WithHeadings {
 
     use Exportable;
 
@@ -23,7 +23,7 @@ class CatalogoExport implements FromCollection, WithHeadings {
     }
 
     public function query() {
-        return Catalogo::select('*')->limit(1);
+        return Catalogo::select('*')->limit(5000);
     }
 
     public function headings(): array {
