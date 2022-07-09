@@ -15,7 +15,11 @@ class EliminarController extends Controller {
      */
     public function __invoke(string $pp) {
         /** @var DownloadTracking $dt */
-        $dt = DownloadTracking::with(['jsons'])->where('user_id', auth()->id())->where('active', true)->get()->first();
+        $dt = DownloadTracking::with(['jsons'])
+            ->where('user_id', auth()->id())
+            ->where('active', true)
+            ->get()
+            ->first();
 
         if ($dt) {
             $jsons = $dt->jsons;

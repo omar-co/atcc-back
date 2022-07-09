@@ -20,7 +20,7 @@ class UserService {
             ->setName($request->getName())
             ->setLastName($request->getLastName())
             ->setEmail($request->getEmail())
-            ->setActive(true)
+            ->setActive($this->active($request))
             ->setRoleId($request->getRoleId())
             ->setRamoId($request->getRamoId())
         ;
@@ -32,6 +32,18 @@ class UserService {
         $user->save();
 
         return $user;
+    }
+
+    /**
+     * @param UserRequest $request
+     * @return bool|null
+     */
+    private function active(UserRequest $request): ?bool {
+        if ($request->has('active')) {
+            return $request->isActive();
+        }
+
+        return true;
     }
 
 }
