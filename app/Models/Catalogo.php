@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Scopes\CicloScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Mehradsadeghi\FilterQueryString\FilterQueryString;
@@ -32,6 +33,16 @@ class Catalogo extends Model
         'id_clave_cartera',
         'monto_aprobado',
     ];
+
+    /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::addGlobalScope(new CicloScope());
+    }
 
 
     public function scopeRelacion($query, array $partida) {

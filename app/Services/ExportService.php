@@ -17,6 +17,8 @@ class ExportService {
     private $ordered;
     private $json;
     private $data;
+
+    private $prevValues = [];
     /**
      * @var JsonService
      */
@@ -85,13 +87,13 @@ class ExportService {
         $result = [];
         foreach ($catalog as $item){
             $result[] = [
-                self::PROGRAMA_TRANSVERSAL_ID,
-                $item->id_ramo,
-                $item->id_ur,
-                $item->id_ur,
-                $item->gpo_funcional,
-                $item->id_funcion,
-                $item->id_subfuncion,
+                $this->sameAsPrevious('programa_transversal', self::PROGRAMA_TRANSVERSAL_ID),
+                $this->sameAsPrevious('id_ramo', $item->id_ramo),
+                $this->sameAsPrevious('id_ur', $item->id_ur),
+                $this->sameAsPrevious('id_ur2', $item->id_ur),
+                $this->sameAsPrevious('gpo_funcional', $item->gpo_funcional),
+                $this->sameAsPrevious('id_funcion', $item->id_funcion),
+                $this->sameAsPrevious('id_subfuncion', $item->id_subfuncion),
                 0,
                 $item->id_ai,
                 $item->id_modalidad,
@@ -128,6 +130,16 @@ class ExportService {
         }
 
         return $this->ordered;
+    }
+
+    private function sameAsPrevious($type, $next) {
+        if (array_key_exists($type, $this->prevValues) && $this->prevValues[$type] === $next) {
+            $this->prevValues[$type] = $next;
+            return '';
+        }
+        $this->prevValues[$type] = $next;
+        return $next;
+
     }
 
 }

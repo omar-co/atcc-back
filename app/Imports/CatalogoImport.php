@@ -5,12 +5,17 @@ namespace App\Imports;
 use App\Models\Catalogo;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithBatchInserts;
 use Maatwebsite\Excel\Concerns\WithChunkReading;
+use Maatwebsite\Excel\Concerns\WithCustomCsvSettings;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\WithProgressBar;
 
-class CatalogoImport implements ToModel, WithChunkReading, WithHeadingRow
+class CatalogoImport extends ImportAbstract implements ToModel, WithChunkReading, WithHeadingRow, withCustomCsvSettings, WithBatchInserts, WithProgressBar
 {
+    use Importable;
     /**
     * @param array $row
     *
@@ -19,7 +24,7 @@ class CatalogoImport implements ToModel, WithChunkReading, WithHeadingRow
     public function model(array $row)
     {
         return new Catalogo([
-            'ciclo' => $row[Str::slug('ciclo','_')],
+            'ciclo' => $this->ciclo($row),
             'id_ramo' => $row[Str::slug('RAMO','_')],
             'desc_ramo' => $row[Str::slug('RAMO_DESCRIPCION','_')],
             'id_ur' => $row[Str::slug('UNIDAD','_')],
@@ -59,6 +64,16 @@ class CatalogoImport implements ToModel, WithChunkReading, WithHeadingRow
 
     public function chunkSize(): int
     {
-        return 300;
+        return 500;
+    }
+
+    public function getCsvSettings(): array {
+        return [
+            'output_encoding' => 'ISO-8859-1'
+        ];
+    }
+
+    public function batchSize(): int {
+        return 500;
     }
 }

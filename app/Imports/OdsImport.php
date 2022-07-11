@@ -8,7 +8,7 @@ use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithChunkReading;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class OdsImport implements ToModel, WithChunkReading, WithHeadingRow
+class OdsImport extends ImportAbstract implements ToModel, WithChunkReading, WithHeadingRow
 {
     /**
     * @param array $row
@@ -21,6 +21,7 @@ class OdsImport implements ToModel, WithChunkReading, WithHeadingRow
             'id_ramo' => $row['ramo'],
             'desc_ramo' => $row['ramodescripcion'],
             'id_modalidad' => $row['modalidad'],
+            'ciclo' => $this->ciclo($row),
             'desc_modalidad' => $row['modalidaddescripcion'],
             'id_pp' => $row['programa_presupuestario'],
             'desc_pp' => $row['programa_presupuestariodescripcion'],

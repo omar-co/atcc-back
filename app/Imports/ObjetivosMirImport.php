@@ -9,7 +9,7 @@ use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithChunkReading;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class ObjetivosMirImport implements ToModel, WithChunkReading, WithHeadingRow
+class ObjetivosMirImport extends ImportAbstract implements ToModel, WithChunkReading, WithHeadingRow
 {
     /**
     * @param array $row
@@ -19,12 +19,12 @@ class ObjetivosMirImport implements ToModel, WithChunkReading, WithHeadingRow
     public function model(array $row)
     {
         return new ObjetivosMir([
-            'ciclo' => $row['ciclo'],
-            'id_ramo' => $row['ramo'],
-            'id_objetivo' => $row['objetivo'],
+            'ciclo' => $this->ciclo($row),
+            'id_ramo' => $row['id_ramo'],
+            'id_objetivo' => $row['id_objetivo'],
             'desc_objetivo' => $row['desc_objetivo'],
-            'id_nivel' => $row['nivel'],
-            //'desc_nivel' => $row['tipo_nivel'],
+            'id_nivel' => $row['id_nivel'],
+            'desc_nivel' => $row['desc_nivel'],
         ]);
     }
 

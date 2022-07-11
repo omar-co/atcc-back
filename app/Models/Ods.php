@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Scopes\CicloScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Mehradsadeghi\FilterQueryString\FilterQueryString;
@@ -19,6 +20,17 @@ class Ods extends Model
         'id_ods',
         'id_metaods'
     ];
+
+
+    /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::addGlobalScope(new CicloScope());
+    }
 
     public static function filters() {
         return [

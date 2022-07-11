@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Imports\CatalogoImport;
 use App\Imports\ObjetivosMirImport;
 use App\Imports\OdsImport;
+use App\Models\File;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 
 class ImportController extends Controller
@@ -25,20 +27,38 @@ class ImportController extends Controller
      */
     public function __invoke(Request $request): Response
     {
-        Excel::import($this->actionFactory($request->tipo), request()->file('file'));
+        set_time_limit(900);
+        $this->actionFactory($request);
 
         return \response('', 200);
     }
 
-    private function actionFactory(string $type)
+    private function actionFactory($request)
     {
-        switch ($type) {
+        switch ($request->type) {
             case self::IMPORT_ODS:
-                return new OdsImport();
+                Excel::import(new OdsImport(), request()->file('file'));
+                return 'ODS importados correctamente.';
             case self::IMPORT_MIRS:
-                return new ObjetivosMirImport();
+                Excel::import(new ObjetivosMirImport(), request()->file('file'));
+                return 'Objetivos MiR importados correctamente.';
             default:
-                return new CatalogoImport();
+                return $this->saveFile($request);
         }
+    }
+
+    private function saveFile($request) {
+        $file = $request->file('file');
+        $path = Storage::putFile(self::IMPORT_CATALOG, $file);
+        $name = $file->getClientOriginalName();
+        $extension = $file->getClientOriginalExtension();
+
+        File::create([
+            'original_name' => $name,
+            'path' => $path,
+            'extension' => $extension
+        ]);
+
+        return 'Catalogos importados correctamente, ejecute el comando php artisan atcc:catalogo para realizar la importación';
     }
 }

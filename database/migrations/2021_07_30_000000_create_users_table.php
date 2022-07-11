@@ -388,6 +388,13 @@ class CreateUsersTable extends Migration
                     'email' => '53',
                     'password' => Hash::make('passramo53'),
                     'ramo_id' => 53,
+                ],
+                [
+                    'name' => 'admin',
+                    'last_name' => 'admin',
+                    'email' => 'admin',
+                    'password' => Hash::make('password'),
+                    'role_id' => 2,
                 ]
             ]
         );
