@@ -29,6 +29,7 @@ class ImportController extends Controller
     {
         set_time_limit(900);
         ini_set('post_max_size', '30M');
+        ini_set('upload_max_filesize', '30M');
         $this->actionFactory($request);
 
         return \response('', 200);
