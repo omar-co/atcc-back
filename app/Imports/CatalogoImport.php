@@ -64,7 +64,7 @@ class CatalogoImport extends ImportAbstract implements ToModel, WithChunkReading
 
     public function chunkSize(): int
     {
-        return 500;
+        return 100;
     }
 
     public function getCsvSettings(): array {
@@ -74,6 +74,6 @@ class CatalogoImport extends ImportAbstract implements ToModel, WithChunkReading
     }
 
     public function batchSize(): int {
-        return 500;
+        return 100;
     }
 }

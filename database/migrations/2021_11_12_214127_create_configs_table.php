@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateConfigsTable extends Migration
@@ -23,6 +24,8 @@ class CreateConfigsTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
+
+        DB::statement($this->import());
     }
 
     /**
@@ -33,5 +36,12 @@ class CreateConfigsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('configs');
+    }
+
+    public function import() {
+        return "insert into configs (id, path, key, value, type, label, user_id, created_at, updated_at)
+values  (1, 'app\\sections\\active', 'ods', 'false', 'bool', 'ODS Activo', 50, '2021-11-12 19:23:21', '2021-11-12 19:23:18'),
+        (2, 'app\\calendar', 'ejercicio', '2022', 'number', 'Ejercicio', 50, '2021-11-12 19:23:21', '2022-07-11 17:14:09'),
+        (3, 'app\\calendar', 'corte', '2021-11-25', 'date', 'Fecha de Corte', 50, '2021-11-12 19:23:21', '2021-11-13 06:33:53');";
     }
 }
