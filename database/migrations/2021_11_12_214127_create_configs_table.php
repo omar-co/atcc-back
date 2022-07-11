@@ -39,9 +39,9 @@ class CreateConfigsTable extends Migration
     }
 
     public function import() {
-        return "insert into configs (id, path, key, value, type, label, user_id, created_at, updated_at)
-values  (1, 'app\\sections\\active', 'ods', 'false', 'bool', 'ODS Activo', 50, '2021-11-12 19:23:21', '2021-11-12 19:23:18'),
-        (2, 'app\\calendar', 'ejercicio', '2022', 'number', 'Ejercicio', 50, '2021-11-12 19:23:21', '2022-07-11 17:14:09'),
-        (3, 'app\\calendar', 'corte', '2021-11-25', 'date', 'Fecha de Corte', 50, '2021-11-12 19:23:21', '2021-11-13 06:33:53');";
+        return "insert into configs (path, `key`, value, type, label, user_id, created_at, updated_at)
+values  ('app\\sections\\active', 'ods', 'false', 'bool', 'ODS Activo', 50, '2021-11-12 19:23:21', '2021-11-12 19:23:18'),
+        ('app\\calendar', 'ejercicio', '2022', 'number', 'Ejercicio', 50, '2021-11-12 19:23:21', '2022-07-11 17:14:09'),
+        ('app\\calendar', 'corte', '2021-11-25', 'date', 'Fecha de Corte', 50, '2021-11-12 19:23:21', '2021-11-13 06:33:53');";
     }
 }
