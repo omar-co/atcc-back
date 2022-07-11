@@ -28,6 +28,7 @@ class ImportController extends Controller
     public function __invoke(Request $request): Response
     {
         set_time_limit(900);
+        ini_set('post_max_size', '30M');
         $this->actionFactory($request);
 
         return \response('', 200);
