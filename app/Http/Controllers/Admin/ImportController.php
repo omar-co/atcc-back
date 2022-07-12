@@ -37,7 +37,7 @@ class ImportController extends Controller
 
     private function actionFactory($request)
     {
-        switch ($request->type) {
+        switch ($request->tipo) {
             case self::IMPORT_ODS:
                 Excel::import(new OdsImport(), request()->file('file'));
                 return 'ODS importados correctamente.';
