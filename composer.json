@@ -15,6 +15,7 @@
         "laravel/tinker": "^2.5",
         "maatwebsite/excel": "^3.1",
         "mehradsadeghi/laravel-filter-querystring": "^1.1",
+        "rap2hpoutre/fast-excel": "^4.0",
         "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {
