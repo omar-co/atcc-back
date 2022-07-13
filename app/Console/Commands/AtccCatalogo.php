@@ -89,7 +89,7 @@ class AtccCatalogo extends Command
                 ]);
             });
 
-            (new CatalogoImport())->withOutput($this->output)->import($file->path);
+            //(new CatalogoImport())->withOutput($this->output)->import($file->path);
             $file->processed = true;
             $file->save();
             $this->output->success('Importación completada correctamente.');
