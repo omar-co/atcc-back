@@ -3,21 +3,20 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Imports\CatalogoImport;
-use App\Imports\ObjetivosMirImport;
+use App\Imports\ImportContract;
+use App\Imports\ImportTrait;
 use App\Imports\OdsImport;
 use App\Models\File;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
+use Rap2hpoutre\FastExcel\FastExcel;
 
-class ImportController extends Controller
+class ImportController extends Controller implements ImportContract
 {
-
-    const IMPORT_ODS = 'ods';
-    const IMPORT_MIRS = 'mirs';
-    const IMPORT_CATALOG = 'catalogo';
+    use ImportTrait;
 
     /**
      * Handle the incoming request.
@@ -42,7 +41,16 @@ class ImportController extends Controller
                 Excel::import(new OdsImport(), request()->file('file'));
                 return 'ODS importados correctamente.';
             case self::IMPORT_MIRS:
-                Excel::import(new ObjetivosMirImport(), request()->file('file'));
+                (new FastExcel)->import(request()->file('file'), function ($row) {
+                    return DB::table('objetivos_mirs')->insert([
+                        'ciclo' => $this->ciclo($row),
+                        'id_ramo' => $row['id_ramo'],
+                        'id_objetivo' => $row['id_objetivo'],
+                        'desc_objetivo' => $row['desc_objetivo'],
+                        'id_nivel' => $row['id_nivel'],
+                        'desc_nivel' => $row['desc_nivel']
+                    ]);
+                });
                 return 'Objetivos MiR importados correctamente.';
             default:
                 return $this->saveFile($request);

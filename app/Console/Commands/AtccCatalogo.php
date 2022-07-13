@@ -2,18 +2,17 @@
 
 namespace App\Console\Commands;
 
-use App\Imports\CatalogoImport;
-use App\Models\Catalogo;
-use App\Models\Config;
+use App\Imports\ImportTrait;
 use App\Models\File;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 use Rap2hpoutre\FastExcel\FastExcel;
-use function Composer\Autoload\includeFile;
 
 class AtccCatalogo extends Command
 {
+    use ImportTrait;
+
     /**
      * The name and signature of the console command.
      *
@@ -28,18 +27,6 @@ class AtccCatalogo extends Command
      */
     protected $description = 'Command description';
 
-    private $ciclo;
-
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
     /**
      * Execute the console command.
      *
@@ -52,7 +39,7 @@ class AtccCatalogo extends Command
         if($file) {
 
             (new FastExcel)->import(Storage::path($file->path), function ($row) {
-                return Catalogo::create([
+                DB::table('catalogos')->insert([
                     'ciclo' => $this->ciclo($row),
                     'id_ramo' => $row['ramo'],
                     'desc_ramo' => $row['ramo_descripcion'],
@@ -89,7 +76,6 @@ class AtccCatalogo extends Command
                 ]);
             });
 
-            //(new CatalogoImport())->withOutput($this->output)->import($file->path);
             $file->processed = true;
             $file->save();
             $this->output->success('Importación completada correctamente.');
@@ -109,23 +95,5 @@ class AtccCatalogo extends Command
             ->first();
     }
 
-    protected function ciclo(array $row) {
-        if (key_exists('ciclo', $row)) {
-            return $row['ciclo'];
-        }
 
-        return $this->getActiveCicle();
-    }
-
-    private function getActiveCicle() {
-        if (!$this->ciclo) {
-            $this->ciclo = Config::where('path', 'app\calendar')
-                ->where('key', 'ejercicio')
-                ->limit(1)
-                ->get()
-                ->first()
-                ->value;
-        }
-        return $this->ciclo;
-    }
 }
