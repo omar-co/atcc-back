@@ -20,7 +20,7 @@ class ConfigService {
     }
 
     private function getCalendar() {
-        return Config::whereIn('key', ['ejercicio', 'corte'])->get();
+        return Config::whereIn('key', ['ejercicio', 'corte', 'modules'])->get();
     }
 
     private function update(Collection $collection, ConfigRequest $request) {
@@ -33,6 +33,11 @@ class ConfigService {
 
         $corte->value = $request->corte;
         $corte->save();
+
+        $modulos = $collection->where('key', 'modules')->first();
+
+        $modulos->value = json_encode($request->modules);
+        $modulos->save();
 
 
         return $corte;

@@ -19,10 +19,12 @@ class ConfigByPathController extends Controller
     {
         $result = Config::where('path', $path)->get();
 
-        $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-        $fecha = Carbon::parse($result->last()->value);
-        $mes = $meses[($fecha->format('n')) - 1];
-        $result->last()->value = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
+        if (count($result) === 2) {
+            $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+            $fecha = Carbon::parse($result->last()->value);
+            $mes = $meses[($fecha->format('n')) - 1];
+            $result->last()->value = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
+        }
 
         return \response($result);
     }
