@@ -15,6 +15,7 @@ class FilterController extends Controller {
      * Handle the incoming request.
      *
      * @param Request $request
+     * @param string $type
      * @return Response
      */
     public function __invoke(Request $request, string $type): Response {

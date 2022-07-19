@@ -16,6 +16,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RoleController;
 use App\Http\Controllers\CapituloController;
 use App\Http\Controllers\ConceptoController;
+use App\Http\Controllers\ConfigByPathController;
 use App\Http\Controllers\Core\ModelController;
 use App\Http\Controllers\EliminarController;
 use App\Http\Controllers\EntidadFederativaController;
@@ -74,6 +75,7 @@ Route::middleware(['auth:api'])->group(function () {
     Route::post('generate', GenerateController::class);
     Route::delete('pp/delete/{pp}', EliminarController::class);
     Route::apiResource('ramo', RamoController::class);
+    Route::get('config-by-path/{path}', ConfigByPathController::class);
 
     Route::middleware(['admin'])->group(function () {
         Route::group(['prefix' => 'collection'], function ($router) {
