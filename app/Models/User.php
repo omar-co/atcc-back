@@ -27,7 +27,8 @@ class User extends Authenticatable implements JWTSubject {
         'active',
         'role_id',
         'password',
-        'ramo_id'
+        'ramo_id',
+        'role_id'
     ];
 
     protected $filters = [

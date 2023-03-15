@@ -52,6 +52,7 @@ class CreateUsersTable extends Migration
                     'email' => '1',
                     'password' => Hash::make('passramo1'),
                     'ramo_id' => 1,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -59,6 +60,7 @@ class CreateUsersTable extends Migration
                     'email' => '2',
                     'password' => Hash::make('passramo2'),
                     'ramo_id' => 2,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -66,6 +68,7 @@ class CreateUsersTable extends Migration
                     'email' => '3',
                     'password' => Hash::make('passramo3'),
                     'ramo_id' => 3,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -73,6 +76,7 @@ class CreateUsersTable extends Migration
                     'email' => '4',
                     'password' => Hash::make('passramo4'),
                     'ramo_id' => 4,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -80,6 +84,7 @@ class CreateUsersTable extends Migration
                     'email' => '5',
                     'password' => Hash::make('passramo5'),
                     'ramo_id' => 5,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -87,6 +92,7 @@ class CreateUsersTable extends Migration
                     'email' => '6',
                     'password' => Hash::make('passramo6'),
                     'ramo_id' => 6,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -94,6 +100,7 @@ class CreateUsersTable extends Migration
                     'email' => '7',
                     'password' => Hash::make('passramo7'),
                     'ramo_id' => 7,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -101,6 +108,7 @@ class CreateUsersTable extends Migration
                     'email' => '8',
                     'password' => Hash::make('passramo8'),
                     'ramo_id' => 8,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -108,6 +116,7 @@ class CreateUsersTable extends Migration
                     'email' => '9',
                     'password' => Hash::make('passramo9'),
                     'ramo_id' => 9,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -115,6 +124,7 @@ class CreateUsersTable extends Migration
                     'email' => '10',
                     'password' => Hash::make('passramo10'),
                     'ramo_id' => 10,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -122,6 +132,7 @@ class CreateUsersTable extends Migration
                     'email' => '11',
                     'password' => Hash::make('passramo11'),
                     'ramo_id' => 11,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -129,6 +140,7 @@ class CreateUsersTable extends Migration
                     'email' => '12',
                     'password' => Hash::make('passramo12'),
                     'ramo_id' => 12,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -136,6 +148,7 @@ class CreateUsersTable extends Migration
                     'email' => '13',
                     'password' => Hash::make('passramo13'),
                     'ramo_id' => 13,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -143,6 +156,7 @@ class CreateUsersTable extends Migration
                     'email' => '14',
                     'password' => Hash::make('passramo14'),
                     'ramo_id' => 14,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -150,6 +164,7 @@ class CreateUsersTable extends Migration
                     'email' => '15',
                     'password' => Hash::make('passramo15'),
                     'ramo_id' => 15,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -157,6 +172,7 @@ class CreateUsersTable extends Migration
                     'email' => '16',
                     'password' => Hash::make('passramo16'),
                     'ramo_id' => 16,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -164,6 +180,7 @@ class CreateUsersTable extends Migration
                     'email' => '18',
                     'password' => Hash::make('passramo18'),
                     'ramo_id' => 18,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -171,6 +188,7 @@ class CreateUsersTable extends Migration
                     'email' => '19',
                     'password' => Hash::make('passramo19'),
                     'ramo_id' => 19,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -178,6 +196,7 @@ class CreateUsersTable extends Migration
                     'email' => '20',
                     'password' => Hash::make('passramo20'),
                     'ramo_id' => 20,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -185,6 +204,7 @@ class CreateUsersTable extends Migration
                     'email' => '21',
                     'password' => Hash::make('passramo21'),
                     'ramo_id' => 21,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -192,6 +212,7 @@ class CreateUsersTable extends Migration
                     'email' => '22',
                     'password' => Hash::make('passramo22'),
                     'ramo_id' => 22,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -199,6 +220,7 @@ class CreateUsersTable extends Migration
                     'email' => '23',
                     'password' => Hash::make('passramo23'),
                     'ramo_id' => 23,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -206,6 +228,7 @@ class CreateUsersTable extends Migration
                     'email' => '24',
                     'password' => Hash::make('passramo24'),
                     'ramo_id' => 24,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -213,6 +236,7 @@ class CreateUsersTable extends Migration
                     'email' => '25',
                     'password' => Hash::make('passramo25'),
                     'ramo_id' => 25,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -220,6 +244,7 @@ class CreateUsersTable extends Migration
                     'email' => '27',
                     'password' => Hash::make('passramo27'),
                     'ramo_id' => 27,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -227,6 +252,7 @@ class CreateUsersTable extends Migration
                     'email' => '28',
                     'password' => Hash::make('passramo28'),
                     'ramo_id' => 28,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -234,6 +260,7 @@ class CreateUsersTable extends Migration
                     'email' => '29',
                     'password' => Hash::make('passramo29'),
                     'ramo_id' => 29,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -241,6 +268,7 @@ class CreateUsersTable extends Migration
                     'email' => '30',
                     'password' => Hash::make('passramo30'),
                     'ramo_id' => 30,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -248,6 +276,7 @@ class CreateUsersTable extends Migration
                     'email' => '31',
                     'password' => Hash::make('passramo31'),
                     'ramo_id' => 31,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -255,6 +284,7 @@ class CreateUsersTable extends Migration
                     'email' => '32',
                     'password' => Hash::make('passramo32'),
                     'ramo_id' => 32,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -262,6 +292,7 @@ class CreateUsersTable extends Migration
                     'email' => '33',
                     'password' => Hash::make('passramo33'),
                     'ramo_id' => 33,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -269,6 +300,7 @@ class CreateUsersTable extends Migration
                     'email' => '34',
                     'password' => Hash::make('passramo34'),
                     'ramo_id' => 34,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -276,6 +308,7 @@ class CreateUsersTable extends Migration
                     'email' => '35',
                     'password' => Hash::make('passramo35'),
                     'ramo_id' => 35,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -283,6 +316,7 @@ class CreateUsersTable extends Migration
                     'email' => '36',
                     'password' => Hash::make('passramo36'),
                     'ramo_id' => 36,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -290,6 +324,7 @@ class CreateUsersTable extends Migration
                     'email' => '37',
                     'password' => Hash::make('passramo37'),
                     'ramo_id' => 37,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -297,6 +332,7 @@ class CreateUsersTable extends Migration
                     'email' => '38',
                     'password' => Hash::make('passramo38'),
                     'ramo_id' => 38,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -304,6 +340,7 @@ class CreateUsersTable extends Migration
                     'email' => '40',
                     'password' => Hash::make('passramo40'),
                     'ramo_id' => 40,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -311,6 +348,7 @@ class CreateUsersTable extends Migration
                     'email' => '41',
                     'password' => Hash::make('passramo41'),
                     'ramo_id' => 41,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -318,6 +356,7 @@ class CreateUsersTable extends Migration
                     'email' => '43',
                     'password' => Hash::make('passramo43'),
                     'ramo_id' => 43,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -325,6 +364,7 @@ class CreateUsersTable extends Migration
                     'email' => '44',
                     'password' => Hash::make('passramo44'),
                     'ramo_id' => 44,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -332,6 +372,7 @@ class CreateUsersTable extends Migration
                     'email' => '45',
                     'password' => Hash::make('passramo45'),
                     'ramo_id' => 45,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -339,6 +380,7 @@ class CreateUsersTable extends Migration
                     'email' => '46',
                     'password' => Hash::make('passramo46'),
                     'ramo_id' => 46,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -346,6 +388,7 @@ class CreateUsersTable extends Migration
                     'email' => '47',
                     'password' => Hash::make('passramo47'),
                     'ramo_id' => 47,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -353,6 +396,7 @@ class CreateUsersTable extends Migration
                     'email' => '48',
                     'password' => Hash::make('passramo48'),
                     'ramo_id' => 48,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -360,6 +404,7 @@ class CreateUsersTable extends Migration
                     'email' => '49',
                     'password' => Hash::make('passramo49'),
                     'ramo_id' => 49,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -367,6 +412,7 @@ class CreateUsersTable extends Migration
                     'email' => '50',
                     'password' => Hash::make('passramo50'),
                     'ramo_id' => 50,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -374,6 +420,7 @@ class CreateUsersTable extends Migration
                     'email' => '51',
                     'password' => Hash::make('passramo51'),
                     'ramo_id' => 51,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -381,6 +428,7 @@ class CreateUsersTable extends Migration
                     'email' => '52',
                     'password' => Hash::make('passramo52'),
                     'ramo_id' => 52,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'ramo',
@@ -388,12 +436,14 @@ class CreateUsersTable extends Migration
                     'email' => '53',
                     'password' => Hash::make('passramo53'),
                     'ramo_id' => 53,
+                    'role_id' => 1,
                 ],
                 [
                     'name' => 'admin',
                     'last_name' => 'admin',
                     'email' => 'admin',
                     'password' => Hash::make('password'),
+                    'ramo_id' => null,
                     'role_id' => 2,
                 ]
             ]
