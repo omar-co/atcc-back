@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\FilterController;
 use App\Http\Controllers\Admin\ImportController;
 use App\Http\Controllers\Admin\ObjetivosMirController;
 use App\Http\Controllers\Admin\OdsController;
+use App\Http\Controllers\Admin\PoliticaPublicaController;
 use App\Http\Controllers\Admin\UpdateAbilitiesController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AbilityController;
@@ -89,6 +90,7 @@ Route::middleware(['auth:api'])->group(function () {
             Route::apiResource('ods', OdsController::class);
             Route::apiResource('mir', ObjetivosMirController::class);
             Route::apiResource('catalogo', CatalogoController::class);
+            Route::apiResource('politicas-publicas', PoliticaPublicaController::class);
         });
 
         Route::group(['prefix' => 'settings'], function () {

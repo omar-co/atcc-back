@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\PoliticaPublica;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\PoliticaPublicaValores;
+use Illuminate\Http\Client\Request;
 
-class PoliticaPublicaController extends Controller
+class PoliticaPublicaValoresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class PoliticaPublicaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PoliticaPublica  $politicaPublica
+     * @param  \App\Models\PoliticaPublicaValores  $politicaPublicaValores
      * @return \Illuminate\Http\Response
      */
-    public function show(PoliticaPublica $politicaPublica)
+    public function show(PoliticaPublicaValores $politicaPublicaValores)
     {
         //
     }
@@ -52,10 +53,10 @@ class PoliticaPublicaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PoliticaPublica  $politicaPublica
+     * @param  \App\Models\PoliticaPublicaValores  $politicaPublicaValores
      * @return \Illuminate\Http\Response
      */
-    public function edit(PoliticaPublica $politicaPublica)
+    public function edit(PoliticaPublicaValores $politicaPublicaValores)
     {
         //
     }
@@ -63,11 +64,11 @@ class PoliticaPublicaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PoliticaPublica  $politicaPublica
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Models\PoliticaPublicaValores  $politicaPublicaValores
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PoliticaPublica $politicaPublica)
+    public function update(Request $request, PoliticaPublicaValores $politicaPublicaValores)
     {
         //
     }
@@ -75,10 +76,10 @@ class PoliticaPublicaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PoliticaPublica  $politicaPublica
+     * @param  \App\Models\PoliticaPublicaValores  $politicaPublicaValores
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PoliticaPublica $politicaPublica)
+    public function destroy(PoliticaPublicaValores $politicaPublicaValores)
     {
         //
     }

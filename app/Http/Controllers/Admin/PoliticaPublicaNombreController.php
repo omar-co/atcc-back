@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\PoliticaPublicaValores;
-use Illuminate\Http\Client\Request;
+use App\Http\Controllers\Controller;
+use App\Models\PoliticaPublicaNombre;
+use Illuminate\Http\Request;
 
-class PoliticaPublicaValoresController extends Controller
+class PoliticaPublicaNombreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class PoliticaPublicaValoresController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PoliticaPublicaValores  $politicaPublicaValores
+     * @param  \App\Models\PoliticaPublicaNombre  $politicaPublicaNombre
      * @return \Illuminate\Http\Response
      */
-    public function show(PoliticaPublicaValores $politicaPublicaValores)
+    public function show(PoliticaPublicaNombre $politicaPublicaNombre)
     {
         //
     }
@@ -52,10 +53,10 @@ class PoliticaPublicaValoresController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PoliticaPublicaValores  $politicaPublicaValores
+     * @param  \App\Models\PoliticaPublicaNombre  $politicaPublicaNombre
      * @return \Illuminate\Http\Response
      */
-    public function edit(PoliticaPublicaValores $politicaPublicaValores)
+    public function edit(PoliticaPublicaNombre $politicaPublicaNombre)
     {
         //
     }
@@ -63,11 +64,11 @@ class PoliticaPublicaValoresController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \App\Models\PoliticaPublicaValores  $politicaPublicaValores
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\PoliticaPublicaNombre  $politicaPublicaNombre
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PoliticaPublicaValores $politicaPublicaValores)
+    public function update(Request $request, PoliticaPublicaNombre $politicaPublicaNombre)
     {
         //
     }
@@ -75,10 +76,10 @@ class PoliticaPublicaValoresController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PoliticaPublicaValores  $politicaPublicaValores
+     * @param  \App\Models\PoliticaPublicaNombre  $politicaPublicaNombre
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PoliticaPublicaValores $politicaPublicaValores)
+    public function destroy(PoliticaPublicaNombre $politicaPublicaNombre)
     {
         //
     }

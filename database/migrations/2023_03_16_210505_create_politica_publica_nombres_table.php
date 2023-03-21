@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('politica_publica_id')->constrained();
             $table->string('name');
             $table->string('level');
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }
