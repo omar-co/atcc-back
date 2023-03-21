@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('politica_publicas', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->boolean('active')->default(false);
             $table->date('start_date');
             $table->date('end_date');
             $table->timestamps();
