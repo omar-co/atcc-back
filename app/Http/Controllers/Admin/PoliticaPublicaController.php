@@ -3,15 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Core\ControllerAbstract;
+use App\Http\Requests\Admin\PoliticaPublicaRequest;
 use App\Http\Resources\PoliticaPublicaResource;
 use App\Models\PoliticaPublica;
-use App\Services\UserService;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class PoliticaPublicaController extends ControllerAbstract
 {
-    public function __construct(UserService $userService) {
-        $this->modelService = $userService;
+    public function __construct() {
+        $this->modelService = null;
         $this->modelClass = PoliticaPublica::class;
         $this->modelResource = PoliticaPublicaResource::class;
     }
@@ -20,19 +22,19 @@ class PoliticaPublicaController extends ControllerAbstract
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param PoliticaPublicaRequest $request
+     * @return Response
+     * @throws AuthorizationException
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(PoliticaPublicaRequest $request): Response {
+        return $this->create($request);
     }
 
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\PoliticaPublica  $politicaPublica
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function show(PoliticaPublica $politicaPublica)
     {
@@ -45,7 +47,7 @@ class PoliticaPublicaController extends ControllerAbstract
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\PoliticaPublica  $politicaPublica
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function update(Request $request, PoliticaPublica $politicaPublica)
     {

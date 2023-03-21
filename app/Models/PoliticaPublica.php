@@ -19,6 +19,12 @@ class PoliticaPublica extends Model
         'end_date',
     ];
 
+    protected static function booted() {
+        static::creating(function (PoliticaPublica $politicaPublica) {
+            $politicaPublica->user_id = auth()->id();
+        });
+    }
+
     public function politicaPublicaNombre(): HasMany {
        return $this->hasMany(PoliticaPublicaNombre::class);
     }
