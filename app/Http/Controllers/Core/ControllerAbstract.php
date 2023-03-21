@@ -75,8 +75,13 @@ abstract class ControllerAbstract extends BaseController {
     protected function create(MainRequest $request) {
         $this->authorize(Ability::CREATE, $this->modelClass);
 
-        $model = new $this->modelClass();
-        $model = $this->modelService->saveFromRequest($model, $request);
+
+        if ($this->modelService) {
+            $model = new $this->modelClass();
+            $model = $this->modelService->saveFromRequest($model, $request);
+        } else {
+            $model = $this->modelClass::create($request->all());
+        }
 
         return response(
             new $this->modelResource($model)
