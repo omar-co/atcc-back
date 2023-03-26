@@ -13,9 +13,13 @@ class PoliticaPublicaNombreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $constraint = function ($query) use ($request) {
+            $query->where('politica_publica_id', $request->query('piliticaPublica'));
+        };
+
+        return response(PoliticaPublicaNombre::treeOf($constraint)->get());
     }
 
     /**

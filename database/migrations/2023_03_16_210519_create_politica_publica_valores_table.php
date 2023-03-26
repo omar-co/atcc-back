@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('politica_publica_valores', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('politica_publica_nombre_id')->constrained();
-            $table->string('value');
+            $table->string('name');
+            $table->unsignedBigInteger('parent_id')->nullable();
+            $table->foreignId('politica_publica_id')->constrained();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
