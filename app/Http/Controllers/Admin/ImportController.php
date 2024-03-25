@@ -58,8 +58,16 @@ class ImportController extends Controller implements ImportContract
     }
 
     private function saveFile($request) {
+        if (! $request->hasFile('file')) {
+            return 'Error: No file uploaded!';
+        }
+
         $file = $request->file('file');
-        $path = Storage::putFile(self::IMPORT_CATALOG, $file);
+
+        if (! $path = Storage::disk('catalogo')->store($file->getClientOriginalName())) {
+            return 'Error: Could not store file!';
+        }
+
         $name = $file->getClientOriginalName();
         $extension = $file->getClientOriginalExtension();
 
